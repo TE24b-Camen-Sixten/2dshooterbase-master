@@ -13,7 +13,6 @@ public class enemyControler : MonoBehaviour
 
     void Start()
     {
-
         Vector2 newPosition = new();
         newPosition.x = Random.Range(-12, 12);
         newPosition.y = Camera.main.orthographicSize + 1;
@@ -25,10 +24,10 @@ public class enemyControler : MonoBehaviour
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
 
-        // if (transform.position.y < Camera.main.orthographicSize + 1)
-        // {
-        //     Destroy(gameObject);
-        // }
+        if (transform.position.y < -6)
+        {
+            Destroy(gameObject);
+        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

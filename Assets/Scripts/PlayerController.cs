@@ -59,14 +59,13 @@ public class PlayerController : MonoBehaviour
             hpSlider.value = HP;
             if (HP <= 0)
             {
-                print("Game Over");
                 SceneManager.LoadScene("Game Over");
             }
         }
         else if (collision.gameObject.tag == "Healer")
         {
-            Destroy(Heal);
-            if (HP <= maxHP)
+            Destroy(collision.gameObject);
+            if (HP < maxHP)
             {
                 HP++;
                 hpSlider.value = HP;
