@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77dda8b17d8ab1c47b49a0fc70e719bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::boltController
-  speed: 10
+  speed: 9
 --- !u!70 &5871147521664369584
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

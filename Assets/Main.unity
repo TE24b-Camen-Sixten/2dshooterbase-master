@@ -539,7 +539,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   wait: 4
+  waitShooter: 20
   enemyPrefab: {fileID: 1455718659814362, guid: bf43fe3ed09cec246b4f2f367f9817fa,
+    type: 3}
+  shooterPrefab: {fileID: 4001000561168903513, guid: 831b50a6257068941a628f24e0922453,
     type: 3}
 --- !u!4 &618174605
 Transform:
@@ -785,7 +788,7 @@ MonoBehaviour:
   boltPrefab: {fileID: 1287502262990996, guid: 4dd15c7fe51711c48ba135fef149bbf8, type: 3}
   Heal: {fileID: 0}
   timeBetweenShot: 0.5
-  maxHP: 1e+34
+  maxHP: 3
   hpSlider: {fileID: 1931592309}
 --- !u!82 &1448444534
 AudioSource:

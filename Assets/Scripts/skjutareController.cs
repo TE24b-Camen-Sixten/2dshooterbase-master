@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class enemyControler : MonoBehaviour
+public class skjutareController : MonoBehaviour
 {
+    public Transform player;
+    
     [SerializeField]
     GameObject BOMBACLAT;
 
     [SerializeField]
     GameObject Heal;
-
+    
+    [SerializeField]
+    float wait;
+    float waited;
     [SerializeField]
     float speed;
-
+    [SerializeField]
+    GameObject skott;
     void Start()
     {
         Vector2 newPosition = new();
@@ -19,7 +25,6 @@ public class enemyControler : MonoBehaviour
         transform.position = newPosition;
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
@@ -28,7 +33,18 @@ public class enemyControler : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        waited += Time.deltaTime;
+        if (waited > wait)
+        {
+            Instantiate(skott, transform.position, Quaternion.identity);
+            waited = 0;
+        }
+
+        Vector3 pos = player.position;
+        transform.LookAt(pos);
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
@@ -36,8 +52,8 @@ public class enemyControler : MonoBehaviour
 
         if (collision.gameObject.tag == "Skott")
         {
-            int healChance = Random.Range(0, 21);
-            if (healChance == 20)
+            int healChance = Random.Range(0, 16);
+            if (healChance == 15)
             {
                 Instantiate(Heal, transform.position, Quaternion.identity);
             }
