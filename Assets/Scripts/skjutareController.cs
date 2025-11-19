@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class skjutareController : MonoBehaviour
 {
-    public Transform player;
+    [SerializeField]
+    Transform playerTransform;
     
     [SerializeField]
     GameObject BOMBACLAT;
@@ -27,7 +28,12 @@ public class skjutareController : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        Vector2 playerPos = playerTransform.position;
+        Vector2 shooterPos = transform.position;
+        Vector2 pointer = playerPos - shooterPos;
+        transform.up = pointer.normalized;
+        
+        transform.Translate(-transform.up * speed * Time.deltaTime);
 
         if (transform.position.y < -6)
         {
@@ -40,9 +46,6 @@ public class skjutareController : MonoBehaviour
             Instantiate(skott, transform.position, Quaternion.identity);
             waited = 0;
         }
-
-        Vector3 pos = player.position;
-        transform.LookAt(pos);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

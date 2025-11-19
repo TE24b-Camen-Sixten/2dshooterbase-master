@@ -1017,6 +1017,74 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1633432817
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233363393813423849, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4001000561168903513, guid: 831b50a6257068941a628f24e0922453,
+        type: 3}
+      propertyPath: m_Name
+      value: skjutare
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 831b50a6257068941a628f24e0922453, type: 3}
 --- !u!1 &1643988224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,7 +1190,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 67, y: -4}
-  m_SizeDelta: {x: 100, y: 40}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1931592309
 MonoBehaviour:
@@ -1295,3 +1363,4 @@ SceneRoots:
   - {fileID: 618174605}
   - {fileID: 1570327940}
   - {fileID: 1643988227}
+  - {fileID: 1633432817}

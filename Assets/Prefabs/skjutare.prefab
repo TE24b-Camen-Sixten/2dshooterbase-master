@@ -85,7 +85,7 @@ SpriteRenderer:
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.18, y: 0.29}
   m_AdaptiveModeThreshold: 0.5
@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c313238220b6f745903792d572346c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerTransform: {fileID: 4578428027316768, guid: 08a11ac572b1de04c89ee9c5500c84a0,
+    type: 3}
   BOMBACLAT: {fileID: 1052859802758272, guid: 7e5c5b1c1b18764459c69710c7dc4adc, type: 3}
   Heal: {fileID: 4628168808052394313, guid: 73ab6f846683ce74abfe37e28f28fc49, type: 3}
   wait: 2
