@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class dumSkottController : MonoBehaviour
 {
+    enemySpawner playerTransformGetter;
+    Transform playerTransform;
+    Vector2 pointer;
+    
     [SerializeField]
     float speed;
     [SerializeField]
@@ -9,12 +13,19 @@ public class dumSkottController : MonoBehaviour
 
     void Start()
     {
+        playerTransformGetter = GameObject.Find("Enemy Spawner").GetComponent<enemySpawner>();
+        playerTransform = playerTransformGetter.playerTransformSend;
+        Vector2 playerPos = playerTransform.position;
+        Vector2 shooterPos = transform.position;
+        pointer = playerPos - shooterPos;
+        transform.up = pointer.normalized;
+        
         
     }
 
     void Update()
     {
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        transform.Translate(pointer.normalized * speed * Time.deltaTime, Space.World);
 
         if (transform.position.y < -6)
         {

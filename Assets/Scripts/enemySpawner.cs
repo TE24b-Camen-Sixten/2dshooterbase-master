@@ -13,6 +13,8 @@ public class enemySpawner : MonoBehaviour
     GameObject enemyPrefab;
     [SerializeField]
     GameObject shooterPrefab;
+    public Transform playerTransformSend;
+
 
     void Update()
     {
@@ -29,5 +31,7 @@ public class enemySpawner : MonoBehaviour
             Instantiate(shooterPrefab, transform.position, Quaternion.identity);
             waitedShooter = 0;
         }
+        
+
     }
 }

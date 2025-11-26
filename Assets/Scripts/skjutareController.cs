@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class skjutareController : MonoBehaviour
 {
-    [SerializeField]
+    enemySpawner playerTransformGetter;
     Transform playerTransform;
+    // [SerializeField]
+    // Transform playerTransform;
     
     [SerializeField]
     GameObject BOMBACLAT;
@@ -28,12 +30,15 @@ public class skjutareController : MonoBehaviour
 
     void Update()
     {
+        playerTransformGetter = GameObject.Find("Enemy Spawner").GetComponent<enemySpawner>();
+        playerTransform = playerTransformGetter.playerTransformSend;
         Vector2 playerPos = playerTransform.position;
         Vector2 shooterPos = transform.position;
         Vector2 pointer = playerPos - shooterPos;
         transform.up = pointer.normalized;
         
-        transform.Translate(-transform.up * speed * Time.deltaTime);
+        transform.Translate(pointer.normalized * speed * Time.deltaTime, Space.World);
+        // transform.position = Vector2.MoveTowards(shooterPos, playerPos, speed * Time.deltaTime);
 
         if (transform.position.y < -6)
         {
@@ -43,7 +48,7 @@ public class skjutareController : MonoBehaviour
         waited += Time.deltaTime;
         if (waited > wait)
         {
-            Instantiate(skott, transform.position, Quaternion.identity);
+            Instantiate(skott, transform.position, transform.rotation);
             waited = 0;
         }
     }
